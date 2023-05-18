@@ -1,0 +1,152 @@
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+}
+.prediction{
+    position: initial;
+}
+.blue-bg {
+  position: fixed;
+  background: url(../images/spider.jpg);
+  background-size: cover;
+  background-color: #58aff6;
+  background-position-y: 70%;
+  top: 0;
+  height: 400px;
+  width: 100vw;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+.white-bg {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  min-height: 500px;
+  margin: 270px 0px;
+  width: 100vw;
+  height: 100vh;
+  transform: skewY(5deg);
+  z-index: -1;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  margin: 250px 10vw;
+  max-width: 60vw;
+  background-color: transparent;
+}
+
+.shadow {
+  box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.summary{
+    margin-top: 50px;
+}
+
+nav ul {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 0;
+    text-decoration: dashed;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ff8c00;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #121111;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.container form{
+    position: relative;
+    width: 160px;
+    height: 60px;
+    display: inline-block;
+    background-color: white;
+    margin: 20px;
+}
+
+.container form:before,
+.container form:after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ff8c00;
+    transition: 0.5s;
+}
+.container form:nth-child(1):before,
+.container form:nth-child(1):after{
+    background: linear-gradient(45deg, #ff8c00,white,white,#ff8c00);
+}
+
+.container form:hover:before{
+    inset: -3px;
+}
+
+.container form:hover:after{
+    inset: -3px;
+    filter: blur(10px);
+}
+
+.container form button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid rgb(240, 238, 238);
+    height: 100%;
+    display: inline-block;
+    background: #fff;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+}
+
+
+input[type=file]::file-selector-button {
+    margin-top: 20px;
+    margin-right: 20px;
+    border: none;
+    background: #ff8c00;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+  
+input[type=file]::file-selector-button:hover {
+    background: #121111;
+}
+
