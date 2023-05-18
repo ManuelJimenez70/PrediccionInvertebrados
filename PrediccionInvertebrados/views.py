@@ -4,8 +4,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.utils import shuffle
 import os
+from PIL import Image
 import keras_tuner as kt
-from tensorflow import keras
+from tensorflow import keras as kr
 import os
 from django.http import HttpResponse
 from django.template import Context, Template
@@ -14,15 +15,15 @@ from PrediccionInvertebrados.settings import BASE_DIR
 ## tiempo que se tarda en predecir
 from keras.layers import BatchNormalization
 from keras.models import load_model
-from keras.preprocessing import image
 from django import forms
 
   
-model = load_model("PrediccionInvertebrados/static/models/model.h5", custom_objects={"BatchNormalization": BatchNormalization})
+model = load_model("PrediccionInvertebrados/static/models/model.h5", custom_objects={"BatchNormalization": kr.layers.BatchNormalization})
 
 def predict():
-    test_image = image.load_img("PrediccionInvertebrados/static/images/predict.jpg", target_size=(100,100))
-    test_image = image.img_to_array(test_image)
+    
+    test_image = kr.preprocessing.image.load_img("PrediccionInvertebrados/static/images/predict.jpg", target_size=(100,100))
+    test_image = kr.preprocessing.image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis=0)
     result = model.predict(test_image, verbose=0)
 
@@ -50,13 +51,10 @@ def save_image(request):
         doc.close()
         context = Context({"result": result})
         document = template.render(context)
-        ##document =  "<h1>%s</h1>" % result
         return HttpResponse(document)
 
 
     
-
-
 def index(request):
     doc = open((os.path.join(BASE_DIR, "PrediccionInvertebrados/templates/index.html")))
     template = Template(doc.read())
