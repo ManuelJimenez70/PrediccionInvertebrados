@@ -16,6 +16,7 @@ from PrediccionInvertebrados.settings import BASE_DIR
 from keras.layers import BatchNormalization
 from keras.models import load_model
 from django import forms
+from django.views.decorators.csrf import csrf_exempt
 
   
 model = load_model("PrediccionInvertebrados/static/models/model.h5", custom_objects={"BatchNormalization": kr.layers.BatchNormalization})
@@ -37,21 +38,30 @@ def predict():
     elif result[0][3] == mx_value:
         tho = 'crustacean'
 
-    return tho
+    return [tho, str(round(result[0][0]*100,2)), str(round(result[0][1]*100,2)), str(round(result[0][2]*100,2)), str(round(result[0][3]*100,2))]
 
 class MyForm(forms.Form):
     image = forms.FileField(label="image")
   
 
+myform = MyForm()
+
+@csrf_exempt
 def save_image(request):
-    if request.method == "GET":
+    if request.method == "POST":
+        imagepp = request.FILES["imagep"]
+        imagefile = Image.open(imagepp)
+        imagefile.save("PrediccionInvertebrados/static/images/predict.jpg")
         result = predict()
+
         doc = open((os.path.join(BASE_DIR, "PrediccionInvertebrados/templates/result.html")))
         template = Template(doc.read())
         doc.close()
-        context = Context({"result": result})
+        context = Context({"result": result[0], "arachnid": result[1], "insect": result[2], "centipede": result[3], "crustacean": result[4]})
         document = template.render(context)
         return HttpResponse(document)
+    
+    return index(request)
 
 
     
