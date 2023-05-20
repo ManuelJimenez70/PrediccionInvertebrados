@@ -1,17 +1,23 @@
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 h2{
-    font-family: "Montserrat", sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
-  text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-align: justify;
+}
+
+p.text{
+    color: #34658d;
+    font-family:'Poppins', sans-serif;
 }
 .prediction{
     position: initial;
@@ -20,7 +26,7 @@ p {
   position: fixed;
   background: url(../images/spider.jpg);
   background-size: cover;
-  background-color: #58aff6;
+  background-color: #4186bf;
   background-position-y: 70%;
   top: 0;
   height: 400px;
@@ -33,20 +39,24 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .white-bg {
-  position: absolute;
-  top: 0;
-  background-color: #fff;
-  min-height: 500px;
-  margin: 270px 0px;
-  width: 100vw;
-  height: 100vh;
-  transform: skewY(5deg);
-  z-index: -1;
-}
+    position: absolute;
+    top: 0;
+    background-color: rgba(229, 229, 229, 0.5); /* Cambiar los valores RGB y ajustar la opacidad según sea necesario */
+    min-height: 500px;
+    margin: 270px 0px;
+    width: 100vw;
+    height: 100vh;
+    transform: skewY(5deg);
+    z-index: -1;
+  }
+  
+  .shadow {
+    box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+  }
 
 .content {
   position: absolute;
@@ -56,12 +66,9 @@ header{
   background-color: transparent;
 }
 
-.shadow {
-  box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
-}
-
 .summary{
-    margin-top: 50px;
+    margin-top: 40px;
+    width: 100%;
 }
 
 nav ul {
@@ -87,63 +94,31 @@ nav ul li a:hover {
     color: #121111;
 }
 
-.container{
+.select{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
 }
-.container form{
-    position: relative;
-    width: 160px;
-    height: 60px;
-    display: inline-block;
-    background-color: white;
-    margin: 20px;
-}
-
-.container form:before,
-.container form:after{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: #ff8c00;
-    transition: 0.5s;
-}
-.container form:nth-child(1):before,
-.container form:nth-child(1):after{
-    background: linear-gradient(45deg, #ff8c00,white,white,#ff8c00);
-}
-
-.container form:hover:before{
-    inset: -3px;
-}
-
-.container form:hover:after{
-    inset: -3px;
-    filter: blur(10px);
-}
-
-.container form button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border: 2px solid rgb(240, 238, 238);
-    height: 100%;
-    display: inline-block;
-    background: #fff;
-    z-index: 10;
+.container1{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: black;
 }
 
+.custom-button {
+    background-color: #ffffff;
+    color: #ff9900;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 
 input[type=file]::file-selector-button {
     margin-top: 20px;
@@ -163,7 +138,7 @@ input[type=file]::file-selector-button:hover {
 
 .card{
     position: relative;
-    width: 300px;
+    width: 400px;
     height: 190px;
     background: #ff8c00;
     transition: 0.5s;
@@ -177,7 +152,7 @@ input[type=file]::file-selector-button:hover {
 .card .lines{
     position: absolute;
     inset: 0;
-    background: #121111;
+    background: #b4b4b4;
     overflow: hidden;
 }
 
@@ -186,9 +161,9 @@ input[type=file]::file-selector-button:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 600px;
+    width: 700px;
     height: 120px;
-    background: linear-gradient(transparent, #58aff6, #58aff6 , #58aff6, transparent);
+    background: linear-gradient(transparent, #16517e, #58aff6 , #58aff6, transparent);
     animation: animate 4s linear infinite;
 }
 
@@ -207,7 +182,7 @@ input[type=file]::file-selector-button:hover {
     content: '';
     position: absolute;
     inset: 3px;
-    background: #121111;
+    background: #000000;
 }
 
 .card .imgBX{
@@ -282,7 +257,7 @@ input[type=file]::file-selector-button:hover {
     text-align: center;
     width: 100%;
     transition: 0.5s;
-    transform: translateY(145px);
+    transform: translateY(178px);
 }
 
 .card:hover .card_content .details{
@@ -292,7 +267,7 @@ input[type=file]::file-selector-button:hover {
 .card .card_content .details h2{
     font-size: 1.25em;
     font-weight: 600px;
-    color: #ff8c00;
+    color: #e17c00;
     line-height: 1.2em;
 }
 
@@ -304,7 +279,7 @@ input[type=file]::file-selector-button:hover {
 
 .card .card_content .details h3{
     font-size: 1em;
-    font-weight: 600px;
-    color: #58aff6;
+    font-weight: 600px; 
+    color: #ffffff;
     line-height: 1.2em;
 }

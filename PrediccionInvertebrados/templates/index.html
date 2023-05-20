@@ -10,47 +10,36 @@
             <div class="blue-bg"></div>
             <div class="white-bg shadow"></div>
             <div class="content">
-            <nav>
-                <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="/about">Acerca del proceso</a></li>
-                </ul>
-            </nav>
+                <nav>
+                    <ul>
+                        <br><br>
+                        <li><a href="">Inicio</a></li>
+                        <li><a href="/about">Acerca del proceso</a></li>
+                    </ul>
+                </nav>
 
-            <div>
+                
                 <div class="summary">
-                    <h1>Predicción de Invertebrados</h1>
-                    <p>Los invertebrados, siendo uno de los grupos más diversos y numerosos del reino animal, 
-                        presentan una gran variedad de especies con características únicas. Mediante el uso de técnicas 
-                        de aprendizaje automático, buscamos aprovechar la capacidad del modelo para reconocer patrones 
-                        y características distintivas en las imágenes, lo que permitirá identificar correctamente si un 
-                        invertebrado pertenece a la categoría de arácnidos, crustáceos, ciempiés o insectos.</p>
+                        
+                    <h1><b>Bienvenido a nuestro sistema de reconocimiento de animales invertebrados!</b><br></h1>
         
-                    <p>Este proyecto combina la potencia de las redes neuronales y el procesamiento de imágenes para lograr
-                         una clasificación precisa de los invertebrados. Al entrenar el modelo con un conjunto de datos 
-                         diverso y representativo, esperamos obtener un modelo robusto y capaz de generalizar a nuevas 
-                         imágenes. Además de la implementación del modelo de machine learning, también nos enfocaremos 
-                         en la creación de una interfaz gráfica interactiva utilizando Django. Esta interfaz permitirá 
-                         a los usuarios cargar imágenes de invertebrados y obtener la predicción de clasificación 
-                         correspondiente, lo que facilitará la identificación de especies y contribuirá al conocimiento 
-                         y estudio de estos fascinantes organismos.</p>
-                    </div>
-                </div>
-                <div>
+                    <p>Nuestro sistema es una herramienta interactiva basada en aprendizaje profundo que te 
+                        permitira identificar y clasificar imagenes de diversos animales invertebrados. <br><br>
+                            
+                        El sistema es capaz de reconocer y clasificar imagenes de animales 
+                        invertebrados en cuatro categorias principales: <b>ciempies</b>, 
+                        <b>aracnido</b>,  <b>insecto</b> o <b>crustaceo</b>.
+                        <p class="text">Explora nuestro sistema y disfruta de la experiencia de descubrir y 
+                        clasificar animales invertebrados de una manera totalmente nueva!</p>
+                </div>  
+                <div class="container1">
                     <form method = "POST" action="save_image/" enctype="multipart/form-data">
-                        {% csrf_token %}
+                       {% csrf_token %}
                         <input  type="file" name="imagep">
-                        <button type="submit">Predecir</button>
-
+                        <button class="custom-button" type="submit">Predecir</button>
                     </form>
                 </div>
-                <div class="container">
-                    <form method = "POST" action="save_image/">
-                        {% csrf_token %}
-                        <button type="submit">Predecir</button>
-                    </form>
-                </div>
-            </div>
+            
         </header>
         
     </body>

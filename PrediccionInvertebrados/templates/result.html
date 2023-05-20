@@ -10,14 +10,11 @@
             <div class="white-bg shadow"></div>
             <div class="content">
                 <nav>
-                    <ul>
+                    <ul><br><br><br>
                         <li><a href="/">Inicio</a></li>
                         <li><a href="/about">Acerca del proceso</a></li>
                     </ul>
                 </nav>
- 
-
-                
 
                 <div class="card"> 
                     <div class="lines"></div>
@@ -26,7 +23,19 @@
                     </div>
                     <div class="card_content">
                         <div class="details">
-                            <h2>{{result}}</h2>
+                            <h2>El animal reconocido es un 
+                                {% if result == "arachnid" %}
+                                    Arácnido
+                                {% elif result == "insect" %}
+                                    Insecto
+                                {% elif result == "centipede" %}
+                                    Ciempies
+                                {% elif result == "crustacean" %}
+                                    Crustáceo
+                                {% else %}
+                                    Resultado no válido
+                                {% endif %}
+                            </h2>
                             <div class="data">
                                 <h3>Presicion Aracnido: {{arachnid}} %</h3>
                                 <h3>Presicion Insecto: {{insect}} %</h3>
