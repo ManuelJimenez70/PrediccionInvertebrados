@@ -269,6 +269,7 @@ input[type=file]::file-selector-button:hover {
     font-weight: 600px;
     color: #e17c00;
     line-height: 1.2em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .card .card_content .detail .data{
@@ -282,4 +283,6 @@ input[type=file]::file-selector-button:hover {
     font-weight: 600px; 
     color: #ffffff;
     line-height: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
 }
