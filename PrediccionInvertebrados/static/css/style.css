@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 h1 {
+    margin-top: 40px;
   font-family: 'Poppins', sans-serif;
 }
 
 h2{
     font-family:'Poppins', sans-serif;
+
 }
 
 p {
@@ -27,9 +29,9 @@ p.text{
   background: url(../images/spider.jpg);
   background-size: cover;
   background-color: #4186bf;
-  background-position-y: 70%;
+  background-position-y: 350%;
   top: 0;
-  height: 400px;
+  height: 600px;
   width: 100vw;
   z-index: -1;
   overflow-x: hidden;
@@ -45,10 +47,9 @@ header{
 .white-bg {
     position: absolute;
     top: 0;
-    background-color: rgba(229, 229, 229, 0.5); /* Cambiar los valores RGB y ajustar la opacidad según sea necesario */
-    min-height: 500px;
+    background: linear-gradient(360deg, white 0 92%, transparent 102%);    
     margin: 270px 0px;
-    width: 100vw;
+    width: 100vw;   
     height: 100vh;
     transform: skewY(5deg);
     z-index: -1;
@@ -67,7 +68,7 @@ header{
 }
 
 .summary{
-    margin-top: 40px;
+    margin-top: 70px;
     width: 100%;
 }
 
@@ -141,18 +142,20 @@ input[type=file]::file-selector-button:hover {
     width: 400px;
     height: 190px;
     background: #ff8c00;
+    color: #121111;
     transition: 0.5s;
-    margin-top: 35%;
+    margin-top: 80px;
 }
 
 .card:hover{
     height: 450px;
+    background: #121111;
 }
 
 .card .lines{
     position: absolute;
     inset: 0;
-    background: #b4b4b4;
+    background: #121111;
     overflow: hidden;
 }
 
@@ -163,9 +166,10 @@ input[type=file]::file-selector-button:hover {
     left: 50%;
     width: 700px;
     height: 120px;
-    background: linear-gradient(transparent, #16517e, #58aff6 , #58aff6, transparent);
+    background: linear-gradient(transparent, #16517e, #ff8c00 , #ff8c00, transparent);
     animation: animate 4s linear infinite;
 }
+
 
 @keyframes animate{
     0%
@@ -182,7 +186,7 @@ input[type=file]::file-selector-button:hover {
     content: '';
     position: absolute;
     inset: 3px;
-    background: #000000;
+    background: #faf7f7;
 }
 
 .card .imgBX{
@@ -211,7 +215,7 @@ input[type=file]::file-selector-button:hover {
     width: 500px;
     height: 150px;
     transform: translate(-50%,-50%);
-    background: linear-gradient(transparent, #58aff6, #58aff6 , #58aff6, transparent);
+    background: linear-gradient(transparent, #ff8c00, #ff8c00 , #ff8c00, transparent);
     animation: animate2 6s linear infinite;
 }
 
@@ -265,8 +269,10 @@ input[type=file]::file-selector-button:hover {
 }
 
 .card .card_content .details h2{
-    font-size: 1.25em;
-    font-weight: 600px;
+    margin-top: 20px;
+    font-size: 1.75em;
+    font-weight: bold;
+
     color: #e17c00;
     line-height: 1.2em;
     font-family: 'Poppins', sans-serif;
@@ -281,7 +287,7 @@ input[type=file]::file-selector-button:hover {
 .card .card_content .details h3{
     font-size: 1em;
     font-weight: 600px; 
-    color: #ffffff;
+    color: #121111;
     line-height: 1.2em;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
