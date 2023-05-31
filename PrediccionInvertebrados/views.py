@@ -62,8 +62,6 @@ def save_image(request):
         return HttpResponse(document)
     
     return index(request)
-
-
     
 def index(request):
     doc = open((os.path.join(BASE_DIR, "PrediccionInvertebrados/templates/index.html")))
@@ -72,4 +70,3 @@ def index(request):
     context = Context()
     document = template.render(context)
     return HttpResponse(document)
-
