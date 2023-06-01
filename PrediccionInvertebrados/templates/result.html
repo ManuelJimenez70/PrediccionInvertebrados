@@ -9,14 +9,43 @@
             <div class="blue-bg"></div>
             <div class="white-bg shadow"></div>
             <div class="content">
-            <nav>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/about">Acerca del proceso</a></li>
-                </ul>
-            </nav>
-            <h1>{{result}}</h1>
+                <nav>
+                    <ul><br><br><br>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/about">Acerca del proceso</a></li>
+                    </ul>
+                </nav>
+                <h1>El Resultado Es: </h1>
+                <div class="card"> 
+                    <div class="lines"></div>
+                    <div class="imgBX">
+                        <img src="../static/images/predict.jpg">
+                    </div>
+                    <div class="card_content">
+                        <div class="details">
+                            <h2>
+                                {% if result == "arachnid" %}
+                                    Aracnido
+                                {% elif result == "insect" %}
+                                    Insecto
+                                {% elif result == "centipede" %}
+                                    Cienpies
+                                {% elif result == "crustacean" %}
+                                    Crustaceo
+                                {% else %}
+                                    Resultado no valido
+                                {% endif %}
+                            </h2>
+                            <div class="data">
+                                <h3>Presicion Aracnido: {{arachnid}} %</h3>
+                                <h3>Presicion Insecto: {{insect}} %</h3>
+                                <h3>Presicion Cienpies: {{centipede}} %</h3>
+                                <h3>Presicion Crustaceo: {{crustacean}} %</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
-        
     </body>
 </html>

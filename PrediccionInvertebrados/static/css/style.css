@@ -1,13 +1,25 @@
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 h1 {
-  font-family: "Montserrat", sans-serif;
+    margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-family:'Poppins', sans-serif;
+
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
-  text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-align: justify;
+}
+
+p.text{
+    color: #34658d;
+    font-family:'Poppins', sans-serif;
 }
 .prediction{
     position: initial;
@@ -16,26 +28,36 @@ p {
   position: fixed;
   background: url(../images/spider.jpg);
   background-size: cover;
-  background-color: #58aff6;
-  background-position-y: 70%;
+  background-color: #4186bf;
+  background-position-y: 350%;
   top: 0;
-  height: 400px;
+  height: 600px;
   width: 100vw;
   z-index: -1;
   overflow-x: hidden;
 }
 
-.white-bg {
-  position: absolute;
-  top: 0;
-  background-color: #fff;
-  min-height: 500px;
-  margin: 270px 0px;
-  width: 100vw;
-  height: 100vh;
-  transform: skewY(5deg);
-  z-index: -1;
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
+
+.white-bg {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(360deg, white 0 92%, transparent 102%);    
+    margin: 270px 0px;
+    width: 100vw;   
+    height: 100vh;
+    transform: skewY(5deg);
+    z-index: -1;
+  }
+  
+  .shadow {
+    box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+  }
 
 .content {
   position: absolute;
@@ -45,12 +67,9 @@ p {
   background-color: transparent;
 }
 
-.shadow {
-  box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
-}
-
 .summary{
-    margin-top: 50px;
+    margin-top: 70px;
+    width: 100%;
 }
 
 nav ul {
@@ -76,63 +95,31 @@ nav ul li a:hover {
     color: #121111;
 }
 
-.container{
+.select{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
 }
-.container form{
-    position: relative;
-    width: 160px;
-    height: 60px;
-    display: inline-block;
-    background-color: white;
-    margin: 20px;
-}
-
-.container form:before,
-.container form:after{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: #ff8c00;
-    transition: 0.5s;
-}
-.container form:nth-child(1):before,
-.container form:nth-child(1):after{
-    background: linear-gradient(45deg, #ff8c00,white,white,#ff8c00);
-}
-
-.container form:hover:before{
-    inset: -3px;
-}
-
-.container form:hover:after{
-    inset: -3px;
-    filter: blur(10px);
-}
-
-.container form button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border: 2px solid rgb(240, 238, 238);
-    height: 100%;
-    display: inline-block;
-    background: #fff;
-    z-index: 10;
+.container1{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: black;
 }
 
+.custom-button {
+    background-color: #ffffff;
+    color: #ff9900;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 
 input[type=file]::file-selector-button {
     margin-top: 20px;
@@ -150,3 +137,158 @@ input[type=file]::file-selector-button:hover {
     background: #121111;
 }
 
+.card{
+    position: relative;
+    width: 400px;
+    height: 190px;
+    background: #ff8c00;
+    color: #121111;
+    transition: 0.5s;
+    margin-top: 80px;
+}
+
+.card:hover{
+    height: 450px;
+    background: #121111;
+}
+
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background: #121111;
+    overflow: hidden;
+}
+
+.card .lines::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 120px;
+    background: linear-gradient(transparent, #16517e, #ff8c00 , #ff8c00, transparent);
+    animation: animate 4s linear infinite;
+}
+
+
+@keyframes animate{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.card .lines::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #faf7f7;
+}
+
+.card .imgBX{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: #121111;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.card:hover .imgBX {
+    width: 250px;
+    height: 250px;
+}
+
+.card .imgBX::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent, #ff8c00, #ff8c00 , #ff8c00, transparent);
+    animation: animate2 6s linear infinite;
+}
+
+@keyframes animate2{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+
+.card .imgBX::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: white ;
+}
+
+.card .imgBX img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.card .card_content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .card_content .details{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(178px);
+}
+
+.card:hover .card_content .details{
+    transform: translateY(0px);
+}
+
+.card .card_content .details h2{
+    margin-top: 20px;
+    font-size: 1.75em;
+    font-weight: bold;
+
+    color: #e17c00;
+    line-height: 1.2em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card .card_content .detail .data{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card .card_content .details h3{
+    font-size: 1em;
+    font-weight: 600px; 
+    color: #121111;
+    line-height: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}

@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('about/', about),
-    path('save_image/', save_image)
-]
+    path('save_image/', save_image)]
